@@ -15,7 +15,13 @@ const llm = new ChatOpenAI({
 // console.log(res)
 
 export async function chat(query) {
-  let context = await retrive(query);
+  let context;
+  try{
+    context= await retrive(query);
+  }catch(error){
+    console.log("Error retrieving context:", error);
+    context = "Service Currently Down. Please try again later.";
+  }
   let system_prompt=`
 You are ROTO, the official member/representative of RCTCET.
 Your role is to answer only using the information provided in the Context from DB.
