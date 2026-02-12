@@ -13,6 +13,6 @@ export const vectorStore = await QdrantVectorStore.fromExistingCollection(
 
 export async function retrive(text) {
   console.log("retrieving context for:", text);
-  const results = await vectorStore.similaritySearch(text, 4);
+  const results = await vectorStore.similaritySearch(text, 10);
   return results.map(res => res.pageContent).join("\n\n");
 }
