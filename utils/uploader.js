@@ -22,8 +22,8 @@ export async function loadDocument(fileName) {
     const docs = await loader.load();
     console.log(`Loaded ${docs.length} documents from ${fileName}.`);
     const splitter = new RecursiveCharacterTextSplitter({
-        chunkSize: 1000,
-        chunkOverlap: 250,
+        chunkSize: 3500,
+        chunkOverlap: 950,
     });
     fs.unlinkSync(filePath);
     const splitDocs = await splitter.splitDocuments(docs);
