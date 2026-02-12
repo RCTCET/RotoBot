@@ -4,7 +4,7 @@ import {retrive} from './vectorstore.js'
 configDotenv();
 
 const llm = new ChatOpenAI({
-  model: "llama-3.1-8b-instant",
+  model: "llama-3.3-70b-versatile",
   temperature: 1,
   apiKey: process.env.OPENAI_API_KEY,
   configuration: {
